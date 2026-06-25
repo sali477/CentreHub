@@ -1,0 +1,15 @@
+{
+  "name": "centrehub-morocco",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\"",
+    "dev:clean": "concurrently -n backend,frontend -c blue,green \"npm run dev:clean --prefix backend\" \"npm run dev:clean --prefix frontend\"",
+    "dev:backend": "npm run dev --prefix backend",
+    "dev:frontend": "npm run dev --prefix frontend",
+    "start": "npm run dev",
+    "setup:google": "node scripts/setup-google-oauth.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
